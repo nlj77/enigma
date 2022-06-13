@@ -1,7 +1,7 @@
 require 'date'
 class EncryptionGenerators
 
-  def generate_keys
+  def generate_key
     new_seed = (0..5).to_a.sample(5).join
     keys = Hash.new
     keys["A"] = new_seed[0] + new_seed[1]
@@ -23,12 +23,11 @@ class EncryptionGenerators
     return offsets
   end
 
-  def generate_shifts(date =  Date.today.strftime("%-m%d%y"))
-    keys = generate_keys
+  def generate_shifts(  date = Date.today.strftime("%-m%d%y"), key = generate_key)
     offsets = generate_offsets(date)
     offsets.transform_values!(&:to_i)
-    keys.transform_values!(&:to_i)
-    shift_array = offsets.values.map.with_index {|v, i| v + keys.values[i]}
+    key.transform_values!(&:to_i)
+    shift_array = offsets.values.map.with_index {|v, i| v + key.values[i]}
     return shift_array
   end
 end
