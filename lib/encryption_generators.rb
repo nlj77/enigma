@@ -1,3 +1,4 @@
+require 'date'
 class EncryptionGenerators
 
   def generate_keys
@@ -20,5 +21,14 @@ class EncryptionGenerators
     offsets["C"] = new_offsets[2]
     offsets["D"] = new_offsets[3]
     return offsets
+  end
+
+  def generate_shifts(date =  Date.today.strftime("%-m%d%y"))
+    keys = generate_keys
+    offsets = generate_offsets(date)
+    offsets.transform_values!(&:to_i)
+    keys.transform_values!(&:to_i)
+    shift_array = offsets.values.map.with_index {|v, i| v + keys.values[i]}
+    return shift_array
   end
 end
