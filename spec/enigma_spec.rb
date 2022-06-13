@@ -8,7 +8,7 @@ RSpec.describe Enigma do
   expect(enigma).to be_instance_of(Enigma)
   end
 
-  it "can return an encryption hash" do
+  xit "can return an encryption hash" do
     enigma = Enigma.new
     expect(enigma.encrypt("hello world", "02715", "040895")).to eq({
     encryption: "keder ohulw",

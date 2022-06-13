@@ -1,7 +1,35 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/nickjones/Turing/1Module/projects/enigma/spec/enigma_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nickjones/Turing/1Module/projects/enigma/lib/enigma.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      }
     },
-    "timestamp": 1654822669
+    "timestamp": 1654892257
   }
 }
