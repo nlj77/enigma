@@ -1,6 +1,6 @@
-class KeyGenerator
+class EncryptionGenerators
 
-  def generate
+  def generate_keys
     new_seed = (0..5).to_a.sample(5).join
     keys = Hash.new
     keys["A"] = new_seed[0] + new_seed[1]
