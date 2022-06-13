@@ -9,4 +9,16 @@ class EncryptionGenerators
     keys["D"] = new_seed[3] + new_seed[4]
     return keys
   end
+
+  def generate_offsets(date)
+    date_squared = date * date
+    date_squared = date_squared.to_s
+    new_offsets = date_squared[-4..-1]
+    offsets = Hash.new
+    offsets["A"] = new_offsets[0]
+    offsets["B"] = new_offsets[1]
+    offsets["C"] = new_offsets[2]
+    offsets["D"] = new_offsets[3]
+    return offsets
+  end
 end
