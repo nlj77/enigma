@@ -5,3 +5,5 @@ require_relative './enigma'
 enigma = Enigma.new
 message_text = ARGV[0]
 encrypted_text = ARGV[1]
+
+message = File.new(message_text).read
