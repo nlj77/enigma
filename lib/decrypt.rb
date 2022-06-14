@@ -7,3 +7,5 @@ message_text = ARGV[0]
 decrypted_text = ARGV[1]
 
 message = File.new(message_text).read
+
+File.open(decrypted_text, "w") do |text_file|
